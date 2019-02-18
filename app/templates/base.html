@@ -1,7 +1,7 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block title %}
-    {% if title %}{{ title }} - Log management{% else %}{{ _('Welcome to Log management') }}{% endif %}
+    {% if title %}{{ title }} - Microblog{% else %}{{ _('Welcome to Microblog') }}{% endif %}
 {% endblock %}
 
 {% block navbar %}
@@ -14,7 +14,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main.index') }}">Log management</a>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}">Microblog</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -27,7 +27,7 @@
                         {{ g.search_form.q(size=20, class='form-control', placeholder=g.search_form.q.label.text) }}
                     </div>
                 </form>
-                {% endif %}                
+                {% endif %}
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
                     <li><a href="{{ url_for('auth.login') }}">{{ _('Login') }}</a></li>
@@ -73,5 +73,47 @@
                 $(destElem).text("{{ _('Error: Could not contact server.') }}");
             });
         }
+        $(function () {
+            var timer = null;
+            var xhr = null;
+            $('.user_popup').hover(
+                function(event) {
+                    // mouse in event handler
+                    var elem = $(event.currentTarget);
+                    timer = setTimeout(function() {
+                        timer = null;
+                        xhr = $.ajax(
+                            '/user/' + elem.first().text().trim() + '/popup').done(
+                                function(data) {
+                                    xhr = null;
+                                    elem.popover({
+                                        trigger: 'manual',
+                                        html: true,
+                                        animation: false,
+                                        container: elem,
+                                        content: data
+                                    }).popover('show');
+                                    flask_moment_render_all();
+                                }
+                            );
+                    }, 1000);
+                },
+                function(event) {
+                    // mouse out event handler
+                    var elem = $(event.currentTarget);
+                    if (timer) {
+                        clearTimeout(timer);
+                        timer = null;
+                    }
+                    else if (xhr) {
+                        xhr.abort();
+                        xhr = null;
+                    }
+                    else {
+                        elem.popover('destroy');
+                    }
+                }
+            );
+        });
     </script>
 {% endblock %}
