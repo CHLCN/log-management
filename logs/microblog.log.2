@@ -1,28 +1,4 @@
-2019-02-16 23:16:20,242 ERROR: Exception on / [GET] [in c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1761]
-Traceback (most recent call last):
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2292, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 35, in reraise
-    raise value
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1811, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2087, in preprocess_request
-    rv = func()
-  File "C:\Users\lenovo\microblog\app\routes.py", line 20, in before_request
-    g.locale = str(get_locale())
-  File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask_babel\__init__.py", line 257, in get_locale
-    rv = babel.locale_selector_func()
-  File "C:\Users\lenovo\microblog\app\__init__.py", line 55, in get_locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-NameError: name 'request' is not defined
-2019-02-16 23:22:46,521 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:52]
-2019-02-17 14:06:04,647 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
-2019-02-17 14:08:23,278 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
-2019-02-17 14:08:32,535 ERROR: Exception on /login [GET] [in c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1761]
+2019-02-17 14:08:38,364 ERROR: Exception on /favicon.ico [GET] [in c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1761]
 Traceback (most recent call last):
   File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
     rv = self.dispatch_request()
@@ -86,3 +62,20 @@ Traceback (most recent call last):
   File "c:\users\lenovo\appdata\local\programs\python\python37-32\lib\site-packages\werkzeug\routing.py", line 1776, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2019-02-17 14:18:30,326 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
+2019-02-17 14:18:52,772 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
+2019-02-17 14:21:43,610 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
+2019-02-17 14:28:28,405 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
+2019-02-17 14:29:57,968 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
+2019-02-17 14:30:43,279 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:74]
+2019-02-17 19:19:32,847 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-17 19:29:43,747 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-17 19:32:51,847 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-17 23:18:35,130 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-17 23:22:28,478 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-18 00:35:31,533 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-18 00:43:08,506 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-18 01:20:01,025 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-18 14:34:00,143 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:86]
+2019-02-18 14:34:12,343 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:86]
+2019-02-18 15:22:54,147 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:82]
