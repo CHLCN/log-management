@@ -76,3 +76,5 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you m
 2019-02-18 00:35:31,533 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
 2019-02-18 00:43:08,506 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
 2019-02-18 01:20:01,025 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:78]
+2019-02-18 14:34:00,143 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:86]
+2019-02-18 14:34:12,343 INFO: Microblog startup [in C:\Users\lenovo\microblog\app\__init__.py:86]
